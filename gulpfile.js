@@ -7,7 +7,7 @@ const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
-const gitignore = require('gulp-gitignore');
+
 
 function browsersync() {
   browserSync.init({
@@ -61,12 +61,7 @@ function styles() {
     .pipe(browserSync.stream())
 }
 
-function gitignore() {
-  return gulp.src('src/**/*')
-    // exclude files defined in .gitignore
-    .pipe(gitignore())
-    .pipe(gulp.dest('dist'));
-});
+
 
 function build() {
   return src([
@@ -91,7 +86,6 @@ exports.scripts = scripts;
 exports.images = images;
 exports.cleanDist = cleanDist;
 exports.cleanDist = cleanDist;
-exports.gitignore = gitignore;
 
 exports.build = series(cleanDist, images, build);
 exports.default = parallel(styles ,scripts , browsersync, watching);

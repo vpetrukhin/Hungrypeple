@@ -1,0 +1,15 @@
+.menu {
+  padding: 0;
+  display: flex;
+  &__item {
+    display: inline-block;
+    width: 133px;
+    text-align: center;
+    font-family: $openSansBold;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+}
